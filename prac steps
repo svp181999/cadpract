@@ -1,0 +1,219 @@
+PRACTICAL 1
+AIM: Develop an ASP.NET Core MVC based Stateless Web App.
+CODE:
+Step 1:
+ Create Project Launch Visual Studio as anadministrator.
+ Create a project with File >New >Project
+ In the New Project dialog, choose Cloud > Service Fabric Application.
+ Name the application Voting and click OK.
+ On the New Service Fabric Servicepage, chooseStateless ASP.NET Core, name your
+serviceVotingWeb, then click OK. 
+
+Step 2: The next page provides a set of ASP.NET Core project templates. For this practical,
+chooseWeb Application (Model-View-Controller), then click OK.
+Step 3: Visual Studio creates an application and a service project and displays them in Solution
+Explorer. .
+Step 4: 2.1 Update the site.js file Open wwwroot/js/site.js.
+Replace its contents with the following JavaScript used by the Home views, then save your
+changes. 
+Step 5: 2.2 Update the Index.cshtml file Open Views/Home/Index.cshtml, the view specific to
+the Home controller.
+Replace its contents with the following, then save your changes.
+Step 6: Update the _Layout.cshtml file
+Open Views/Shared/_Layout.cshtml, the default layout for the ASP.NET app. Replace its
+contents with the following, then save your changes. 
+
+Step 7: Update the VotingWeb.cs file
+Open the VotingWeb.cs file, which creates the ASP.NET Core WebHost inside the stateless
+service using the WebListener web server.Replace the content with the following code, then
+save your changes. 
+Step 8: Add the VotesController.cs file
+Add a controller, which defines voting actions. Right-click on the Controllers folder, then
+select Add->New item->Visual C#->ASP.NET Core->Class. Name the file
+VotesController.cs, then click Add. 
+Step 9: Add a stateful back-end service to your application 
+Step 11: Publish Service Fabric application
+
+Practical No: 02
+Aim: 2A. Create an Azure Kubernetes Service Cluster
+Source Code:
+Step 1: Sign in Azure Portal (https://portal.azure.com/)
+Step 2: Create Resource by clicking on Create Resource option. 
+Step 3: Select Kubernetes Services
+Step 4: Enter the subscription, resource group, kubernetes, Cluster name, Region, Kubernetes version,& DNS Name prefix 
+Step 5: Click on Review + Create Button
+Step 6: Click on Create Button
+
+Aim: 2B. Configure Visual Studio to work with an azure kubernetes services Cluster
+Source Code:
+Step 1: Install Visual Studio Enterprise 2022
+Step 2: Open Visual Studio 2022 >create a Project >Extensions>Manage Extensions 
+Step 3: Search for Bridge to Kubernetes 2022
+Step 4: Click on Download
+Step 5: Close visual studio
+Step 6: click on Modify (install kubernetes tool extension) 
+Step 7: Open Visual studio
+ Click on new project
+ Select Asp.net Core Web Application > click on Ok
+ Select Model View Control > Click on OK
+ Click On Down Arrow of IIS Express
+ We can see option of Bridge to Kubernetes 
+
+Aim: 2C. Configure Visual Studio Code to work with an azure kubernetes
+services Cluster
+Source Code:
+Step 1: Install visual studio code
+Step 2: Open extension window
+Step 3: Search for Bridge to kubernetes 2022
+Click Install
+ Search for Azure CLI tools and install
+ Go to https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-windows?tabs=azure-cli
+ Click on Latest release of the Azure CLI, download the msi and run
+ Output on command prompt 
+Step 4: Close the Visual Studio code and restart application.
+Type the following command on the terminal. Output on Visual Studio Code
+
+Practical No: 3
+Aim: 3a. Create an AKS cluster - From the portal
+Source Code:
+Step 1: Sign in to the Azure portal at https://portal.azure.com.
+Step 2: On the Azure portal menu or from the home page, select Create a resource. 
+Step 3: Select Containers > Kubernetes Service. 
+
+Step 4: On the Basics page, configure the following options:
+• Project details: Select an Azure Subscription, then select or create an Azure Resource group,
+such as CAD_PRACS.
+• Cluster details: Enter a Kubernetes cluster name, such as CAD_PRAC5. Select a Region
+and Kubernetes version for the AKS cluster.
+• Primary node pool: Select a VM Node size for the AKS nodes. The VM size can't be
+changed once an AKS cluster has been deployed. - Select the number of nodes to deploy into
+the cluster. Set Node count to 1. Node count can be adjusted after the cluster has been
+deployed. 
+Step 5: On the Node pools page, keep the default options. At the bottom of the screen, click
+Next: Authentication & keep local access or keep it default what is selected. We can change it
+later.
+Step 6: Click Review + create and then Create when validation completes. 
+
+Aim: 3b. Create an AKS cluster – with Azure CLI
+Source Code:
+Step 1: Install Azure CLI for windows system.
+Step 2: Sign in to the Azure CLI by using the az login command. To finish the authentication
+process, follow the steps displayed in your terminal. 
+Step 3: Run az version to find the version and dependent libraries that are 
+Step 4: An Azure resource group is a logical group in which Azure resources are deployed and
+managed. When you create a resource group, you are asked to specify a location. This location
+is where resource group metadata is stored, it is also where your resources run in Azure if you
+don't specify another region during resource creation. Create a resource group using the az
+group create command (Not to use this command yet. Refer the command in next step)
+Step 5: The following example creates a resource group named myResourceGroup in the
+centralindia location.
+az group create --name MERA_CAD_PRAC_5 --location centralindia 
+Step 6: Use following command to create an AKS cluster. The following example creates a
+cluster with one node. This will take several minutes to complete.
+az aks create --resource-group MERA_CAD_PRAC_5 --name PRAC5_Cluster --nodecount 1 --enable-addons monitoring --generate-ssh-keys
+
+Practical No: 04
+Create an API gateway service
+Aim: 4A. Create an API Management Service.
+Source Code:
+Step 1: Sign-in to your Azure Subscription Portal
+Step 2: Search for “API Management”, then select API Management in order to create a
+service instance.
+Step 3: Select “API Management service” 
+Step 4: As API management service page is loaded, select “Create API management service”
+button. 
+Step 6: Provide a name. This name sets the URL of the API gateway and portal [NameAzureManagementService]
+Step 7: Select the subscription and resource group (or create a new resource group), and select
+the location. [ Resource NameAzureManagement, Location- SouthEast Asia]
+Step 8: Specify the organization name. This name will appear in the developer portal as the
+organization that publishes the API. [Name-CAD Prac 8]
+Step 9: Specify the email address of the administrator. The user who creates the service
+instance will be the default administrator, so it's best to provide the email address of this user
+until you want someone else to serve as administrator.
+Step 10: Select the pricing tier. The Developer tier is the most comprehensive offering, with
+sufficient request/response limitations in dev/test scenarios.
+Step 11: After Completing the form click on review + create button to create “Azure API
+Management service instance”. 
+
+Aim: 4B. Create an API Gateway Service.
+Source Code:
+Step 1: Sign in to you AWS account.
+Step 2: search for API Gateway, and create an AWS Gateway instance as shown in Image 1. 
+Step 3: Select Import from the REST API selection as shown in image 2
+Step 4: Select Import from swagger and copy or select the swagger file as shown in image 3 
+Step 5: To Create an API definition in Swagger. First login to the swagger account. As
+depicted in image 4. 
+Step 6: Then fill the Form which includes the version, name and other details click on Create
+API button. As depicted in image 5. 
+Step 7: Copy the API and definition from swagger as shown in image 6 
+Step 8: Paste the definition and in In the Settings section, select the endpoint type. Select
+“Edge Optimized” option and then click on import button 
+
+Practical No: 05
+Aim: 5a Demonstrate - Securing APIs with Azure Active Directory
+Step 1 – Login to Azure Portal and select/search Azure Active Directory service.
+Step 2 - Select the App Registrations blade on the left, then select new registration. 
+Step 3 – Click on New Registration and
+I. add the name of the app as “CAD_API_Practical”.
+II. Accounts in this organizational directory only (University of Mumbai only - Single tenant)
+III. Ignore the Redirect URI(We’ll see it in the next step) 
+Step 4 – The App is created. 
+Note down the Application & Tenant ID for further use for authentication.
+Step 5 – Now click Add a Redirect URI & click on +Add Platform. Select Single-page
+Application 
+Step 6 – Add Redirect URI as http://localhost:3000 & check Access & ID tokens mentioned
+in the screenshot 
+Step 7 – Click on Configure and output is as follow 
+Step 8 – Now download the application from Github from the below link for secure
+authentication to the API we created.
+git clone https://github.com/Azure-Samples/ms-identity-javascript-tutorial.git
+Step 9 – Install NodeJs on the system using the following link -
+https://nodejs.org/en/download/
+Step 10 – Install the project dependencies using the following command in the mentioned
+directory below
+<folder>/ms-identity-javascript-tutorial/1-Authentication/1-sign-in
+npm install 
+
+
+Practical No: 06
+Aim: Create a serverless API using Azure functions
+Step 1 - Sign in with your Microsoft account to access various Azure functionalities
+Step 2 - After Successful sign in, Click on Function app→Click on Create Function App
+Step 3 - Click on Resource Group →Create New
+Resource Group Name: CAD10_Practical
+Function App Name: CAD10_Practical
+Runtime stack: .NET Core
+Version 6
+Region: Central US 
+
+Step 4 - Click on Review and Create: 
+Step 5 – Function is now created. Now, Click on Functions →Add
+Step 6 - Click on HTTP Trigger and then click on Add & create the same. 
+Step 7 – The Http Trigger is now created & the URL too. 
+Step 8 – Signup on the postman using any SSO to test the http trigger. 
+Step 9 – Select HTTP Trigger & Click on GET function. Once the GET function is visible,
+paste the function URL to test the same. Now, we can see in the output of the successful hit
+request. 
+
+Practical No: 07
+Aim: Create AWS Lambda Function.
+To create a Lambda function with the console
+Step 1: Open the Functions page on the Lambda console. 
+Step 2: Choose Create function. 
+Step 3 - Now search "S3" in the search bar. 
+Step 4 – Create a bucket with appropriate bucket name, aws region and encryption
+Step 5 - Now go the roles under IAM and select the role and attach policies for s3 bucket
+access. 
+Step 6 - Now go search function and create a function now and paste the code below and
+deploy the same. 
+
+Practical no. 08
+Aim: Build AWS Lambda with AWS API Gateway
+Description of Practical: -
+ In this practical we will learn to build AWS Lambda function using API Gateway.
+ In order to perform this practical we will take an example.
+ The example is EMI Calculator.
+EMI Calculator
+Steps
+ Login into AWS Console.
+ Search for Lambda on the service bar. 
